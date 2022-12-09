@@ -4,15 +4,9 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'inicio',
-    pathMatch: 'full'
-  },
-  {
-    path: 'tab-inicial',
-    loadChildren: () => import('./tab-inicial/tab-inicial.module').then( m => m.TabInicialPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   }
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
